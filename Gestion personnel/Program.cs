@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_personnel.vue;
+using Gestion_personnel.controleur;
 
 namespace Gestion_personnel
 {
@@ -15,8 +17,8 @@ namespace Gestion_personnel
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginPage());
+            Application.SetCompatibleTextRenderingDefault(false);           
+            new controle();
         }
-    }
+    }   
 }
