@@ -6,10 +6,10 @@ using System.Windows.Forms;
 namespace Gestion_personnel.connexion
 {
     // connexion à la base de données et éxecution des requêtes
-    public class connexionBDD
+    public class ConnexionBDD
     {   
         // Instance unique de la classe
-        private static connexionBDD instance = null;
+        private static ConnexionBDD instance = null;
         // Objet de connexion à la base de donnée à partir d'une chaine de connexion 
         private MySqlConnection connection;
         // Objet pour executer une requête SQL
@@ -18,7 +18,7 @@ namespace Gestion_personnel.connexion
         private MySqlDataReader reader;
         
         // Constructeur privé pour créer la connexion à la base de donnée et l'ouvrir
-        private connexionBDD(string stringConnect)
+        private ConnexionBDD(string stringConnect)
         {
             try
             {
@@ -33,11 +33,11 @@ namespace Gestion_personnel.connexion
         }
 
         // Crée une instance unique de la classe
-        public static connexionBDD GetInstance(string stringConnect)
+        public static ConnexionBDD GetInstance(string stringConnect)
         {
             if (instance is null)
             {
-                instance = new connexionBDD(stringConnect);
+                instance = new ConnexionBDD(stringConnect);
             }
             return instance;
         }
