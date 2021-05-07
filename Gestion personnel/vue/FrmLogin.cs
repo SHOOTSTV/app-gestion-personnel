@@ -14,9 +14,9 @@ namespace Gestion_personnel.vue
     public partial class frmLogin : Form
     {
         // instance du controleur
-        private controle controle;
+        private Controle controle;
 
-        public frmLogin(controle controle)
+        public frmLogin(Controle controle)
         {
             InitializeComponent();
             this.controle = controle;

@@ -6,13 +6,13 @@ using Gestion_personnel.modele;
 
 namespace Gestion_personnel.controleur
 {
-    public class controle
+    public class Controle
     {
         // fenêtre de login
         private frmLogin frmLogin;
 
         // ouverture de la fenêtre 
-        public controle()
+        public Controle()
         {
             frmLogin = new frmLogin(this);
             frmLogin.ShowDialog();
@@ -24,7 +24,7 @@ namespace Gestion_personnel.controleur
             if(AccesData.ControleAuthentification(login, pwd))
             {
                 frmLogin.Hide();
-                (new frmPersonnel()).ShowDialog();
+                (new frmPersonnel(this)).ShowDialog();
                 return true;
             }
             else
@@ -32,6 +32,18 @@ namespace Gestion_personnel.controleur
                 return false;
 
             }
+        }
+
+        // Récupère et retourne les infos du personnel de la BDD
+        public List<Personnel> GetLesPersonnels()
+        {
+            return AccesData.GetLesPersonnels();
+        }
+
+        // Récupère et retourne les infos des absences de la BDD
+        public List<Absence> GetLesAbsences()
+        {
+            return AccesData.GetLesAbsences();
         }
     } 
 }

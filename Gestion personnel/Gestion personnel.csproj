@@ -47,10 +47,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="connexion\connexionBDD.cs" />
-    <Compile Include="controleur\controle.cs" />
+    <Compile Include="connexion\ConnexionBDD.cs" />
+    <Compile Include="controleur\Controle.cs" />
     <Compile Include="dal\AccesData.cs" />
-    <Compile Include="modele\personnel.cs" />
+    <Compile Include="mlr1Absence.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mlr1Absence.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mlr1ResponsableService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mlr1ResponsableService.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Absence.cs" />
+    <Compile Include="modele\Personnel.cs" />
+    <Compile Include="mrl1Personnel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mrl1Personnel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mrl1Persotable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mrl1Persotable.xsd</DependentUpon>
+    </Compile>
     <Compile Include="vue\FrmPersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +101,50 @@
     <EmbeddedResource Include="vue\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="mlr1Absence.xsc">
+      <DependentUpon>mlr1Absence.xsd</DependentUpon>
+    </None>
+    <None Include="mlr1Absence.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mlr1Absence.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mlr1Absence.xss">
+      <DependentUpon>mlr1Absence.xsd</DependentUpon>
+    </None>
+    <None Include="mlr1ResponsableService.xsc">
+      <DependentUpon>mlr1ResponsableService.xsd</DependentUpon>
+    </None>
+    <None Include="mlr1ResponsableService.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mlr1ResponsableService.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mlr1ResponsableService.xss">
+      <DependentUpon>mlr1ResponsableService.xsd</DependentUpon>
+    </None>
+    <None Include="mrl1Personnel.xsc">
+      <DependentUpon>mrl1Personnel.xsd</DependentUpon>
+    </None>
+    <None Include="mrl1Personnel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mrl1Personnel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mrl1Personnel.xss">
+      <DependentUpon>mrl1Personnel.xsd</DependentUpon>
+    </None>
+    <None Include="mrl1Persotable.xsc">
+      <DependentUpon>mrl1Persotable.xsd</DependentUpon>
+    </None>
+    <None Include="mrl1Persotable.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mrl1Persotable.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mrl1Persotable.xss">
+      <DependentUpon>mrl1Persotable.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

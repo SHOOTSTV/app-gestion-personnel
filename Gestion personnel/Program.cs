@@ -18,7 +18,7 @@ namespace Gestion_personnel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);           
-            new controle();
+            new Controle();
         }
     }   
 }
