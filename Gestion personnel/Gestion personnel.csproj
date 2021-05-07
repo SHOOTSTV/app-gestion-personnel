@@ -61,7 +61,9 @@
       <DependentUpon>mlr1ResponsableService.xsd</DependentUpon>
     </Compile>
     <Compile Include="modele\Absence.cs" />
+    <Compile Include="modele\Motif.cs" />
     <Compile Include="modele\Personnel.cs" />
+    <Compile Include="modele\Service.cs" />
     <Compile Include="mrl1Personnel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -18,12 +18,13 @@ namespace Gestion_personnel
             Init();
         }
 
-
         // Initialisation fram : remplissage des lites
         public void Init()
         {
             RemplirListePersonnels();
             RemplirListeAbsences();
+            RemplirListeServices();
+            RemplirListeMotifs();
         }
 
         // Affichage des personnels
@@ -36,6 +37,18 @@ namespace Gestion_personnel
             dgvPersonnel.Columns["idservice"].Visible = false;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
+
+        // Affiche les services
+        public void RemplirListeServices()
+        {
+            List<Service> lesServices = controle.GetLesServices();
+            bdgService.DataSource = lesServices;
+            cboService.DataSource = bdgService;
+            if (cboService.Items.Count > 0)
+            {
+                cboService.SelectedIndex = 0;
+            }
+        }
         // Affichage des absences d'un personnel
         public void RemplirListeAbsences()
         {
@@ -43,7 +56,19 @@ namespace Gestion_personnel
             bdgAbsence.DataSource = lesAbsences;
             dgvAbsence.DataSource = bdgAbsence;
             dgvAbsence.Columns["idpersonnel"].Visible = false;
+            dgvAbsence.Columns["idmotif"].Visible = false;
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        // Affiche les motifs
+        public void RemplirListeMotifs()
+        {
+            List<Motif> lesMotifs = controle.GetLesMotifs();
+            bdgMotif.DataSource = lesMotifs;
+            cboMotif.DataSource = bdgMotif;
+            if (cboMotif.Items.Count > 0)
+            {
+                cboMotif.SelectedIndex = 0;
+            }
         }
     }
 }
