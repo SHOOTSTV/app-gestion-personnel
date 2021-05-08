@@ -86,6 +86,7 @@
             this.btnAddPerso.TabIndex = 5;
             this.btnAddPerso.Text = "Ajouter";
             this.btnAddPerso.UseVisualStyleBackColor = true;
+            this.btnAddPerso.Click += new System.EventHandler(this.btnAddPerso_Click);
             // 
             // btnModifPerso
             // 
@@ -95,6 +96,7 @@
             this.btnModifPerso.TabIndex = 4;
             this.btnModifPerso.Text = "Modifier";
             this.btnModifPerso.UseVisualStyleBackColor = true;
+            this.btnModifPerso.Click += new System.EventHandler(this.btnModifPerso_Click);
             // 
             // btnDeletePerso
             // 
@@ -104,6 +106,7 @@
             this.btnDeletePerso.TabIndex = 3;
             this.btnDeletePerso.Text = "Supprimer";
             this.btnDeletePerso.UseVisualStyleBackColor = true;
+            this.btnDeletePerso.Click += new System.EventHandler(this.btnDeletePerso_Click);
             // 
             // dgvPersonnel
             // 
@@ -190,12 +193,13 @@
             this.grbAddperso.Controls.Add(this.txtNom);
             this.grbAddperso.Controls.Add(this.lblPrenom);
             this.grbAddperso.Controls.Add(this.lblNom);
+            this.grbAddperso.Enabled = false;
             this.grbAddperso.Location = new System.Drawing.Point(12, 405);
             this.grbAddperso.Name = "grbAddperso";
             this.grbAddperso.Size = new System.Drawing.Size(604, 167);
             this.grbAddperso.TabIndex = 8;
             this.grbAddperso.TabStop = false;
-            this.grbAddperso.Text = "Ajouter un personnel";
+            this.grbAddperso.Text = "ajouter un personnel";
             // 
             // btnAnnulerperso
             // 
@@ -205,6 +209,7 @@
             this.btnAnnulerperso.TabIndex = 10;
             this.btnAnnulerperso.Text = "annuler";
             this.btnAnnulerperso.UseVisualStyleBackColor = true;
+            this.btnAnnulerperso.Click += new System.EventHandler(this.btnAnnulerperso_Click);
             // 
             // btnSaveperso
             // 
@@ -214,6 +219,7 @@
             this.btnSaveperso.TabIndex = 6;
             this.btnSaveperso.Text = "enregistrer";
             this.btnSaveperso.UseVisualStyleBackColor = true;
+            this.btnSaveperso.Click += new System.EventHandler(this.btnSaveperso_Click);
             // 
             // cboService
             // 
@@ -327,7 +333,7 @@
             this.grbAddabsence.Size = new System.Drawing.Size(532, 167);
             this.grbAddabsence.TabIndex = 10;
             this.grbAddabsence.TabStop = false;
-            this.grbAddabsence.Text = "Ajouter une absence";
+            this.grbAddabsence.Text = "ajouter une absence";
             // 
             // btnAnnulerabsence
             // 

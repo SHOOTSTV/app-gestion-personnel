@@ -9,24 +9,24 @@ namespace Gestion_personnel.dal
     public class AccesData
     {   //  connexion à la BDD 
         private static string connectionString = "server=127.0.0.1;user id=root;persistsecurityinfo=True;database=mlr1";
-        
+
         // Contrôle si l'user à le droit de se connecter (login password)
         public static Boolean ControleAuthentification(string login, string pwd)
         {
             string req = "select * from responsable where login=@login and pwd=@pwd";
-           // req += "where r.login=@login and pwd=SHA2(@pwd, 256)";
+            // req += "where r.login=@login and pwd=SHA2(@pwd, 256)";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters.Add("@login", login);           
+            parameters.Add("@login", login);
             parameters.Add("@pwd", pwd);
             ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
             curs.ReqSelect(req, parameters);
             if (curs.Read())
-            {              
+            {
                 curs.Close();
                 return true;
             }
             else
-            {                
+            {
                 curs.Close();
                 return false;
             }
@@ -35,7 +35,7 @@ namespace Gestion_personnel.dal
         // Récupère et retourne les personnels provenant de la BDD
         public static List<Personnel> GetLesPersonnels()
         {
-            List <Personnel> lesPersonnels = new List<Personnel>();
+            List<Personnel> lesPersonnels = new List<Personnel>();
             string req = "select p.idpersonnel as idpersonnel, p.nom as nom, p.prenom as prenom, p.tel as tel, p.mail as mail, s.idservice as idservice, s.nom as service ";
             req += "from personnel p join service s on (p.idservice = s.idservice) ";
             req += "order by nom, prenom;";
@@ -44,7 +44,7 @@ namespace Gestion_personnel.dal
             curs.ReqSelect(req, null);
             while (curs.Read())
             {
-                Personnel personnel = new Personnel((int)curs.Field("idpersonnel"), (int)curs.Field("idservice"),(string)curs.Field("nom"), (string)curs.Field("prenom"), (string)curs.Field("tel"), (string)curs.Field("mail"), (string)curs.Field("service"));
+                Personnel personnel = new Personnel((int)curs.Field("idpersonnel"), (int)curs.Field("idservice"), (string)curs.Field("nom"), (string)curs.Field("prenom"), (string)curs.Field("tel"), (string)curs.Field("mail"), (string)curs.Field("service"));
                 lesPersonnels.Add(personnel);
             }
             curs.Close();
@@ -98,6 +98,44 @@ namespace Gestion_personnel.dal
             curs.Close();
             return lesMotifs;
         }
+        // Demande de suppression d'un personnel
+        public static void DelPersonnel(Personnel personnel)
+        {
+            string req = "delete from personnel where idpersonnel = @idpersonnel;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", personnel.Idpersonnel);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
+        // Demande d'ajout d'un personnel
+        public static void AddPersonnel(Personnel personnel)
+        {
+            string req = "insert into personnel(nom, prenom, tel, mail, idservice) ";
+            req += "values (@nom, @prenom, @tel, @mail, @idservice);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@nom", personnel.Nom);
+            parameters.Add("@prenom", personnel.Prenom);
+            parameters.Add("@tel", personnel.Tel);
+            parameters.Add("@mail", personnel.Mail);
+            parameters.Add("@idservice", personnel.Idservice);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
 
+        }
+        // Modification d'un développeur
+        public static void UpdatePersonnel(Personnel personnel)
+        {
+            string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
+            req += "where idpersonnel = @idpersonnel;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", personnel.Idpersonnel);
+            parameters.Add("@nom", personnel.Nom);
+            parameters.Add("@prenom", personnel.Prenom);
+            parameters.Add("@tel", personnel.Tel);
+            parameters.Add("@mail", personnel.Mail);
+            parameters.Add("@idservice", personnel.Idservice);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
     }
 }
