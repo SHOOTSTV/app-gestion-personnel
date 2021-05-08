@@ -45,5 +45,16 @@ namespace Gestion_personnel.controleur
         {
             return AccesData.GetLesAbsences();
         }
+
+        // Récupère et retourne les infos des services de la BDD
+        public List<Service> GetLesServices()
+        {
+            return AccesData.GetLesServices();
+        }
+        // Récupère et retourne les infos des motifs de la BDD
+        public List<Motif> GetLesMotifs()
+        {
+            return AccesData.GetLesMotifs();
+        }
     } 
 }

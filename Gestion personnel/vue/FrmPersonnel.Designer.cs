@@ -58,12 +58,14 @@
             this.btnSaveabsence = new System.Windows.Forms.Button();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
             this.dtpDebut = new System.Windows.Forms.DateTimePicker();
-            this.cboAbsence = new System.Windows.Forms.ComboBox();
+            this.cboMotif = new System.Windows.Forms.ComboBox();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblDatefin = new System.Windows.Forms.Label();
             this.lblDatedebut = new System.Windows.Forms.Label();
             this.bdgPersonnel = new System.Windows.Forms.BindingSource(this.components);
             this.bdgAbsence = new System.Windows.Forms.BindingSource(this.components);
+            this.bdgService = new System.Windows.Forms.BindingSource(this.components);
+            this.bdgMotif = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsence)).BeginInit();
             this.grbPersonnel.SuspendLayout();
@@ -72,11 +74,13 @@
             this.grbAddabsence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdgPersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgAbsence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgMotif)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPerso
             // 
-            this.btnAddPerso.Location = new System.Drawing.Point(335, 329);
+            this.btnAddPerso.Location = new System.Drawing.Point(349, 329);
             this.btnAddPerso.Name = "btnAddPerso";
             this.btnAddPerso.Size = new System.Drawing.Size(75, 23);
             this.btnAddPerso.TabIndex = 5;
@@ -85,7 +89,7 @@
             // 
             // btnModifPerso
             // 
-            this.btnModifPerso.Location = new System.Drawing.Point(416, 329);
+            this.btnModifPerso.Location = new System.Drawing.Point(430, 329);
             this.btnModifPerso.Name = "btnModifPerso";
             this.btnModifPerso.Size = new System.Drawing.Size(75, 23);
             this.btnModifPerso.TabIndex = 4;
@@ -94,7 +98,7 @@
             // 
             // btnDeletePerso
             // 
-            this.btnDeletePerso.Location = new System.Drawing.Point(497, 329);
+            this.btnDeletePerso.Location = new System.Drawing.Point(511, 329);
             this.btnDeletePerso.Name = "btnDeletePerso";
             this.btnDeletePerso.Size = new System.Drawing.Size(75, 23);
             this.btnDeletePerso.TabIndex = 3;
@@ -106,10 +110,10 @@
             this.dgvPersonnel.AllowUserToAddRows = false;
             this.dgvPersonnel.AllowUserToDeleteRows = false;
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonnel.Location = new System.Drawing.Point(29, 30);
+            this.dgvPersonnel.Location = new System.Drawing.Point(16, 30);
             this.dgvPersonnel.Name = "dgvPersonnel";
             this.dgvPersonnel.ReadOnly = true;
-            this.dgvPersonnel.Size = new System.Drawing.Size(543, 279);
+            this.dgvPersonnel.Size = new System.Drawing.Size(570, 279);
             this.dgvPersonnel.TabIndex = 2;
             // 
             // btnAddAbsence
@@ -214,10 +218,6 @@
             // cboService
             // 
             this.cboService.FormattingEnabled = true;
-            this.cboService.Items.AddRange(new object[] {
-            "administratif",
-            "médiation culturelle",
-            "prêt"});
             this.cboService.Location = new System.Drawing.Point(308, 112);
             this.cboService.Name = "cboService";
             this.cboService.Size = new System.Drawing.Size(151, 21);
@@ -317,7 +317,7 @@
             this.grbAddabsence.Controls.Add(this.btnSaveabsence);
             this.grbAddabsence.Controls.Add(this.dtpFin);
             this.grbAddabsence.Controls.Add(this.dtpDebut);
-            this.grbAddabsence.Controls.Add(this.cboAbsence);
+            this.grbAddabsence.Controls.Add(this.cboMotif);
             this.grbAddabsence.Controls.Add(this.lblMotif);
             this.grbAddabsence.Controls.Add(this.lblDatefin);
             this.grbAddabsence.Controls.Add(this.lblDatedebut);
@@ -361,18 +361,13 @@
             this.dtpDebut.Size = new System.Drawing.Size(200, 20);
             this.dtpDebut.TabIndex = 10;
             // 
-            // cboAbsence
+            // cboMotif
             // 
-            this.cboAbsence.FormattingEnabled = true;
-            this.cboAbsence.Items.AddRange(new object[] {
-            "vacances",
-            "maladie",
-            "motif familial",
-            "congé parental"});
-            this.cboAbsence.Location = new System.Drawing.Point(364, 31);
-            this.cboAbsence.Name = "cboAbsence";
-            this.cboAbsence.Size = new System.Drawing.Size(151, 21);
-            this.cboAbsence.TabIndex = 9;
+            this.cboMotif.FormattingEnabled = true;
+            this.cboMotif.Location = new System.Drawing.Point(364, 31);
+            this.cboMotif.Name = "cboMotif";
+            this.cboMotif.Size = new System.Drawing.Size(151, 21);
+            this.cboMotif.TabIndex = 9;
             // 
             // lblMotif
             // 
@@ -422,6 +417,8 @@
             this.grbAddabsence.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdgPersonnel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgAbsence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgMotif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,7 +449,7 @@
         private System.Windows.Forms.GroupBox grbAddabsence;
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.DateTimePicker dtpDebut;
-        private System.Windows.Forms.ComboBox cboAbsence;
+        private System.Windows.Forms.ComboBox cboMotif;
         private System.Windows.Forms.Label lblMotif;
         private System.Windows.Forms.Label lblDatefin;
         private System.Windows.Forms.Label lblDatedebut;
@@ -462,6 +459,8 @@
         private System.Windows.Forms.Button btnAnnulerabsence;
         private System.Windows.Forms.BindingSource bdgPersonnel;
         private System.Windows.Forms.BindingSource bdgAbsence;
+        private System.Windows.Forms.BindingSource bdgService;
+        private System.Windows.Forms.BindingSource bdgMotif;
     }
 }
 

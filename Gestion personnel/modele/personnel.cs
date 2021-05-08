@@ -14,6 +14,7 @@ namespace Gestion_personnel.modele
         private string prenom;
         private string tel;
         private string mail;
+        private string service;
 
         public int Idpersonnel { get => idpersonnel; }
         public int Idservice { get => idservice; }
@@ -21,9 +22,10 @@ namespace Gestion_personnel.modele
         public string Prenom { get => prenom; }
         public string Tel { get => tel; }
         public string Mail { get => mail; }
+        public string Service { get => service; }
 
         // Constructeur
-        public Personnel(int idpersonnel, int idservice, string nom, string prenom, string tel, string mail)
+        public Personnel(int idpersonnel, int idservice, string nom, string prenom, string tel, string mail, string service)
         {
             this.idpersonnel = idpersonnel;
             this.idservice = idservice;
@@ -31,6 +33,8 @@ namespace Gestion_personnel.modele
             this.prenom = prenom;
             this.tel = tel;
             this.mail = mail;
+            this.idservice = idservice;
+            this.service = service;
         }
 
 

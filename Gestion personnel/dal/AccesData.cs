@@ -36,13 +36,15 @@ namespace Gestion_personnel.dal
         public static List<Personnel> GetLesPersonnels()
         {
             List <Personnel> lesPersonnels = new List<Personnel>();
-            string req = "select idpersonnel as idpersonnel, idservice as idservice, nom as nom, prenom as prenom, tel as tel, mail as mail  from personnel";
+            string req = "select p.idpersonnel as idpersonnel, p.nom as nom, p.prenom as prenom, p.tel as tel, p.mail as mail, s.idservice as idservice, s.nom as service ";
+            req += "from personnel p join service s on (p.idservice = s.idservice) ";
+            req += "order by nom, prenom;";
 
             ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
             curs.ReqSelect(req, null);
             while (curs.Read())
             {
-                Personnel personnel = new Personnel((int)curs.Field("idpersonnel"), (int)curs.Field("idservice"),(string)curs.Field("nom"), (string)curs.Field("prenom"), (string)curs.Field("tel"), (string)curs.Field("mail"));
+                Personnel personnel = new Personnel((int)curs.Field("idpersonnel"), (int)curs.Field("idservice"),(string)curs.Field("nom"), (string)curs.Field("prenom"), (string)curs.Field("tel"), (string)curs.Field("mail"), (string)curs.Field("service"));
                 lesPersonnels.Add(personnel);
             }
             curs.Close();
@@ -53,17 +55,49 @@ namespace Gestion_personnel.dal
         public static List<Absence> GetLesAbsences()
         {
             List<Absence> lesAbsences = new List<Absence>();
-            string req = "select idpersonnel as idpersonnel, datedebut as datedebut, idmotif as idmotif, datefin as datefin from absence";
+            string req = "select a.idpersonnel as idpersonnel, a.datedebut as datedebut, m.idmotif as idmotif, a.datefin as datefin, m.libelle as motif ";
+            req += "from absence a join motif m on (a.idmotif = m.idmotif) ";
 
             ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
             curs.ReqSelect(req, null);
             while (curs.Read())
             {
-                Absence absence = new Absence((int)curs.Field("idpersonnel"), (DateTime)curs.Field("datedebut"), (int)curs.Field("idmotif"), (DateTime)curs.Field("datefin"));
+                Absence absence = new Absence((int)curs.Field("idpersonnel"), (DateTime)curs.Field("datedebut"), (int)curs.Field("idmotif"), (DateTime)curs.Field("datefin"), (string)curs.Field("motif"));
                 lesAbsences.Add(absence);
             }
             curs.Close();
             return lesAbsences;
         }
+        // Récupère et retourne les services provenant de la BDD
+        public static List<Service> GetLesServices()
+        {
+            List<Service> lesServices = new List<Service>();
+            string req = "select * from service ";
+            ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+            while (curs.Read())
+            {
+                Service service = new Service((int)curs.Field("idservice"), (string)curs.Field("nom"));
+                lesServices.Add(service);
+            }
+            curs.Close();
+            return lesServices;
+        }
+        // Récupère et retourne les motifs provenant de la BDD
+        public static List<Motif> GetLesMotifs()
+        {
+            List<Motif> lesMotifs = new List<Motif>();
+            string req = "select * from motif ";
+            ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+            while (curs.Read())
+            {
+                Motif motif = new Motif((int)curs.Field("idmotif"), (string)curs.Field("libelle"));
+                lesMotifs.Add(motif);
+            }
+            curs.Close();
+            return lesMotifs;
+        }
+
     }
 }
