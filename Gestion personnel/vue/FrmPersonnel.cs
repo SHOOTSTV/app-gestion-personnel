@@ -7,13 +7,25 @@ using System.Linq;
 
 namespace Gestion_personnel
 {
+    /// <summary>
+    /// Fenêtre d'affichage des personnels et de leurs absences
+    /// </summary>
     public partial class frmPersonnel : Form
     {
-        // Instance du controleur
+        /// <summary>
+        /// Instance du controleur
+        /// </summary>
         private Controle controle;
-        // Booléen pour savoir si une modification est demandée
+
+        /// <summary>
+        /// Booléen pour savoir si une modification est demandée
+        /// </summary>
         private Boolean ModifEnCours = false;
-        // Initialisation des composants graphiques
+
+        /// <summary>
+        /// Initialisation des composants graphiques
+        /// </summary>
+        /// <param name="controle"></param>
         public frmPersonnel(Controle controle)
         {
             InitializeComponent();
@@ -21,7 +33,9 @@ namespace Gestion_personnel
             Init();
         }
 
-        // Initialisation fram : remplissage des lites
+        /// <summary>
+        /// Initialisation fram : remplissage des lites
+        /// </summary>
         public void Init()
         {
             RemplirListePersonnels();           
@@ -29,7 +43,9 @@ namespace Gestion_personnel
             
         }
 
-        // Affichage des personnels
+        /// <summary>
+        /// Affichage des personnels
+        /// </summary>
         public void RemplirListePersonnels()
         {
             List<Personnel> lesPersonnels = controle.GetLesPersonnels();
@@ -40,7 +56,9 @@ namespace Gestion_personnel
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        // Affiche les services
+        /// <summary>
+        /// Affiche les services
+        /// </summary>
         public void RemplirListeServices()
         {
             List<Service> lesServices = controle.GetLesServices();
@@ -52,7 +70,10 @@ namespace Gestion_personnel
             }
         }
 
-        // Affichage des absences d'un personnel
+        /// <summary>
+        /// Affichage des absences d'un personnel
+        /// </summary>
+        /// <param name="id"></param>
         public void RemplirAbsencesById(int id)
         {           
             List<Absence> absences = controle.GetLesAbsences().Where(abs => abs.Idpersonnel == id).ToList();
@@ -62,7 +83,9 @@ namespace Gestion_personnel
             dgvAbsence.Columns["idmotif"].Visible = false;
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
-        // Affiche les motifs
+        /// <summary>
+        /// Affiche les motifs
+        /// </summary>
         public void RemplirListeMotifs()
         {
             List<Motif> lesMotifs = controle.GetLesMotifs();
@@ -74,7 +97,11 @@ namespace Gestion_personnel
             }
         }
 
-        // Demande de suppression d'un personnel
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeletePerso_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
@@ -91,20 +118,30 @@ namespace Gestion_personnel
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-        // Ouvre l'interface pour ajouter un personnel
+        /// <summary>
+        /// Ouvre l'interface pour ajouter un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddPerso_Click(object sender, EventArgs e)
         {
             grbAddperso.Enabled = true;
             grbAddperso.Text = "ajouter un personnel";
         }
-        // Vider les zones de saisies et fermeture de l'interface ajout
+        /// <summary>
+        /// Vider les zones de saisies et fermeture de l'interface ajout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnulerperso_Click(object sender, EventArgs e)
         {
             ViderPersonnel();
             grbAddperso.Enabled = false;
             ModifEnCours = false;
         }
-        // Vide les zones de saisie d'un personnel
+        /// <summary>
+        /// Vide les zones de saisie d'un personnel
+        /// </summary>
         private void ViderPersonnel()
         {
             txtNom.Text = String.Empty;
@@ -113,7 +150,11 @@ namespace Gestion_personnel
             txtTel.Text = String.Empty;
             cboService.SelectedIndex = 0;
         }
-        // Demande d'ajout d'un personnel
+        /// <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveperso_Click(object sender, EventArgs e)
         {
             if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && cboService.SelectedIndex != -1 && MessageBox.Show("Etes vous sûr?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -145,7 +186,11 @@ namespace Gestion_personnel
                 MessageBox.Show("Tous les champs doivent être remplis.", "Information");
             }
         }
-        // Demande de modification d'un personnel
+        /// <summary>
+        /// Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifPerso_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
@@ -165,7 +210,11 @@ namespace Gestion_personnel
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-        // Demande d'affichage des absences
+        /// <summary>
+        /// Demande d'affichage des absences
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnShowAbs_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
@@ -184,14 +233,22 @@ namespace Gestion_personnel
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-        // Demande de retour et vide le tableau
+        /// <summary>
+        /// Demande de retour et vide le tableau
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReturn_Click(object sender, EventArgs e)
         {
             grbAbsence.Enabled = false;
             dgvAbsence.Rows.Clear();
             grbAddabsence.Enabled = false;
         }
-        // Demande de suppression d'une absence
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteAbsence_Click(object sender, EventArgs e)
         {
             if (dgvAbsence.SelectedRows.Count > 0)
@@ -215,7 +272,11 @@ namespace Gestion_personnel
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-        // Demande d'ajout d'une absence
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveabsence_Click(object sender, EventArgs e)
         {
             if (cboMotif.SelectedIndex != -1 && MessageBox.Show("Etes vous sûr?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -250,7 +311,11 @@ namespace Gestion_personnel
                 MessageBox.Show("Tous les champs doivent être remplis.", "Information");
             }
         }
-        // Demande de modification d'une absence
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifAbsence_Click(object sender, EventArgs e)
         {
             if (dgvAbsence.SelectedRows.Count > 0)
@@ -268,12 +333,20 @@ namespace Gestion_personnel
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-        // Ouvre l'interface pour ajouter une absence
+        /// <summary>
+        /// Ouvre l'interface pour ajouter une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddAbsence_Click(object sender, EventArgs e)
         {
             grbAddabsence.Enabled = true;
         }
-        // Vider les zones de saisies et fermeture de l'interface d'ajout d'une absence
+        /// <summary>
+        /// Vider les zones de saisies et désactive de l'interface d'ajout d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnulerabsence_Click(object sender, EventArgs e)
         {
             grbAddabsence.Enabled = false;

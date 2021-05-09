@@ -5,19 +5,32 @@ using System.Windows.Forms;
 
 namespace Gestion_personnel.connexion
 {
-    // connexion à la base de données et éxecution des requêtes
+    /// <summary>
+    /// Connexion à la base de données et éxecution des requêtes
+    /// </summary>
     public class ConnexionBDD
-    {   
-        // Instance unique de la classe
+    {
+        /// <summary>
+        /// Instance unique de la classe
+        /// </summary>
         private static ConnexionBDD instance = null;
-        // Objet de connexion à la base de donnée à partir d'une chaine de connexion 
+        /// <summary>
+        /// Objet de connexion à la base de donnée à partir d'une chaine de connexion 
+        /// </summary>
         private MySqlConnection connection;
-        // Objet pour executer une requête SQL
+        /// <summary>
+        /// Objet pour executer une requête SQL 
+        /// </summary>
         private MySqlCommand command;
-        // Objet contenant le résultat d'une requête "select" (curseur)
+        /// <summary>
+        /// Objet contenant le résultat d'une requête "select" (curseur)
+        /// </summary>
         private MySqlDataReader reader;
-        
-        // Constructeur privé pour créer la connexion à la base de donnée et l'ouvrir
+
+        /// <summary>
+        /// Constructeur privé pour créer la connexion à la base de donnée et l'ouvrir
+        /// </summary>
+        /// <param name="stringConnect"></param>
         private ConnexionBDD(string stringConnect)
         {
             try
@@ -32,7 +45,11 @@ namespace Gestion_personnel.connexion
             }
         }
 
-        // Crée une instance unique de la classe
+        /// <summary>
+        /// Crée une instance unique de la classe
+        /// </summary>
+        /// <param name="stringConnect"></param>
+        /// <returns></returns>
         public static ConnexionBDD GetInstance(string stringConnect)
         {
             if (instance is null)
@@ -42,7 +59,11 @@ namespace Gestion_personnel.connexion
             return instance;
         }
 
-        // Exécution d'une requête autre que "select"
+        /// <summary>
+        /// Exécution d'une requête autre que "select"
+        /// </summary>
+        /// <param name="stringQuery"></param>
+        /// <param name="parameters"></param>
         public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters)
         {
             try
@@ -64,7 +85,11 @@ namespace Gestion_personnel.connexion
             }
         }
 
-        // Exécution d'une requête de type "select" et valorise le curseur
+        /// <summary>
+        /// Exécution d'une requête de type "select" et valorise le curseur
+        /// </summary>
+        /// <param name="stringQuery"></param>
+        /// <param name="parameters"></param>
         public void ReqSelect(string stringQuery, Dictionary<string, object> parameters)
         {
             try
@@ -86,7 +111,10 @@ namespace Gestion_personnel.connexion
             }
         }
 
-        // Essaye de lire la ligne suivante du curseur
+        /// <summary>
+        /// Essaye de lire la ligne suivante du curseur
+        /// </summary>
+        /// <returns>false si la fin du curseur est atteinte</returns>
         public bool Read()
         {
             if (reader is null)
@@ -103,7 +131,11 @@ namespace Gestion_personnel.connexion
             }
         }
 
-        // Retourne le contenu d'un champ dont le nom est envoyé en paramètre
+        /// <summary>
+        /// Retourne le contenu d'un champ dont le nom est envoyé en paramètre
+        /// </summary>
+        /// <param name="nameField"></param>
+        /// <returns></returns>
         public object Field(string nameField)
         {
             if (reader is null)
@@ -120,7 +152,9 @@ namespace Gestion_personnel.connexion
             }
         }
 
-        // Femeture du curseur
+        /// <summary>
+        /// Femeture du curseur
+        /// </summary>
         public void Close()
         {
             if (!(reader is null))

@@ -21,7 +21,14 @@ namespace Gestion_personnel.modele
         public string Motif { get => motif; }
 
 
-        // Constructeur
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="idpersonnel"></param>
+        /// <param name="datedebut"></param>
+        /// <param name="idmotif"></param>
+        /// <param name="datefin"></param>
+        /// <param name="motif"></param>
         public Absence(int idpersonnel, DateTime datedebut, int idmotif, DateTime datefin, string motif)
         {
             this.idpersonnel = idpersonnel;

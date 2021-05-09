@@ -24,7 +24,16 @@ namespace Gestion_personnel.modele
         public string Mail { get => mail; }
         public string Service { get => service; }
 
-        // Constructeur
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="idpersonnel"></param>
+        /// <param name="idservice"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="tel"></param>
+        /// <param name="mail"></param>
+        /// <param name="service"></param>
         public Personnel(int idpersonnel, int idservice, string nom, string prenom, string tel, string mail, string service)
         {
             this.idpersonnel = idpersonnel;

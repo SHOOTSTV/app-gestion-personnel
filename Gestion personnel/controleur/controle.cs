@@ -6,19 +6,31 @@ using Gestion_personnel.modele;
 
 namespace Gestion_personnel.controleur
 {
+    /// <summary>
+    /// Gère les interractions entre la vue et le modèle
+    /// </summary>
     public class Controle
     {
-        // fenêtre de login
+        /// <summary>
+        /// fenêtre de login
+        /// </summary>
         private frmLogin frmLogin;
 
-        // ouverture de la fenêtre 
+        /// <summary>
+        /// ouverture de la fenêtre 
+        /// </summary>
         public Controle()
         {
             frmLogin = new frmLogin(this);
             frmLogin.ShowDialog();
         }
 
-        // demande de vérification du login
+        /// <summary>
+        /// demande de vérification du login
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
         public Boolean ControleAuthentification(string login, string pwd)
         {
             if(AccesData.ControleAuthentification(login, pwd))
@@ -34,54 +46,84 @@ namespace Gestion_personnel.controleur
             }
         }
 
-        // Récupère et retourne les infos du personnel de la BDD
+        /// <summary>
+        /// Récupère et retourne les infos du personnel de la BDD
+        /// </summary>
+        /// <returns>liste personnels</returns>
         public List<Personnel> GetLesPersonnels()
         {
             return AccesData.GetLesPersonnels();
         }
 
-        // Récupère et retourne les infos des absences de la BDD
+        /// <summary>
+        /// Récupère et retourne les infos des absences de la BDD
+        /// </summary>
+        /// <returns>liste absences</returns>
         public List<Absence> GetLesAbsences()
         {
             return AccesData.GetLesAbsences();
         }
 
-        // Récupère et retourne les infos des services de la BDD
+        /// <summary>
+        /// Récupère et retourne les infos des services de la BDD
+        /// </summary>
+        /// <returns>liste services</returns>
         public List<Service> GetLesServices()
         {
             return AccesData.GetLesServices();
         }
-        // Récupère et retourne les infos des motifs de la BDD
+        /// <summary>
+        /// Récupère et retourne les infos des motifs de la BDD
+        /// </summary>
+        /// <returns>liste motifs</returns>
         public List<Motif> GetLesMotifs()
         {
             return AccesData.GetLesMotifs();
         }
-        // Demande de suppression d'un personnel
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void DelPersonnel(Personnel personnel)
         {
             AccesData.DelPersonnel(personnel);
         }
-        // Demande d'ajout d'un personnel
+        /// <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void AddPersonnel(Personnel personnel)
         {
             AccesData.AddPersonnel(personnel);
         }
-        // Demande de modification d'un personnel
+        /// <summary>
+        /// Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void UpdatePersonnel(Personnel personnel)
         {
             AccesData.UpdatePersonnel(personnel);
         }
-        // Demande de suppression d'une absence
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public void DelAbsence(Absence absence)
         {
             AccesData.DelAbsence(absence);
         }
-        // Demande d'ajout d'une absence
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public void AddAbsence(Absence absence)
         {
             AccesData.AddAbsence(absence);
         }
-        // Demande de modification d'une absence
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public void UpdateAbsence(Absence absence)
         {
             AccesData.UpdateAbsence(absence);

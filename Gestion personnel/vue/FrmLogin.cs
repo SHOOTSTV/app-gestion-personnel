@@ -11,9 +11,14 @@ using System.Windows.Forms;
 
 namespace Gestion_personnel.vue
 {
+    /// <summary>
+    /// Fenêtre de login
+    /// </summary>
     public partial class frmLogin : Form
     {
-        // instance du controleur
+        /// <summary>
+        /// instance du controleur
+        /// </summary>
         private Controle controle;
 
         public frmLogin(Controle controle)
@@ -22,7 +27,11 @@ namespace Gestion_personnel.vue
             this.controle = controle;
         }
 
-        // Demande au contrôleur de controler l'accès
+        /// <summary>
+        /// Demande au contrôleur de controler l'accès
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConnect_Click(object sender, EventArgs e)
         {
             if (!txtLogin.Text.Equals("") && !txtPwd.Text.Equals(""))
