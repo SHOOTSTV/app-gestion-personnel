@@ -122,7 +122,7 @@ namespace Gestion_personnel.dal
             conn.ReqUpdate(req, parameters);
 
         }
-        // Modification d'un développeur
+        // Demande de modification d'un développeur
         public static void UpdatePersonnel(Personnel personnel)
         {
             string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
@@ -134,6 +134,45 @@ namespace Gestion_personnel.dal
             parameters.Add("@tel", personnel.Tel);
             parameters.Add("@mail", personnel.Mail);
             parameters.Add("@idservice", personnel.Idservice);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
+        // Demande de suppression d'une absence
+        public static void DelAbsence(Absence absence)
+        {
+            string req = "delete from absence where idpersonnel = @idpersonnel AND datedebut = @datedebut AND idmotif = @idmotif AND datefin = @datefin;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.Idpersonnel);
+            parameters.Add("@datedebut", absence.Datedebut);
+            parameters.Add("@idmotif", absence.Idmotif);
+            parameters.Add("@datefin", absence.Datefin);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+
+        }
+        // Demande d'ajout d'une absence
+        public static void AddAbsence(Absence absence)
+        {
+            string req = "insert into absence(idpersonnel, datedebut, idmotif, datefin) ";
+            req += "values (@idpersonnel, @datedebut, @idmotif, @datefin);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.Idpersonnel);
+            parameters.Add("@datedebut", absence.Datedebut);
+            parameters.Add("@idmotif", absence.Idmotif);
+            parameters.Add("@datefin", absence.Datefin);
+            ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
+            conn.ReqUpdate(req, parameters);
+        }
+        // Demande de modification d'un développeur 
+        public static void UpdateAbsence(Absence absence)
+        {
+            string req = "update absence set datedebut = @datedebut, idmotif = @idmotif, datefin = @datefin ";
+            req += "where idpersonnel = @idpersonnel;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.Idpersonnel);
+            parameters.Add("@datedebut", absence.Datedebut);
+            parameters.Add("@idmotif", absence.Idmotif);
+            parameters.Add("@datefin", absence.Datefin);
             ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
         }

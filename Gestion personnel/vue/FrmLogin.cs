@@ -29,7 +29,7 @@ namespace Gestion_personnel.vue
             {
                 if (!controle.ControleAuthentification(txtLogin.Text, txtPwd.Text))
                 {
-                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas admin", "Alerte");
+                    MessageBox.Show("Authentification incorrecte", "Alerte");
                     txtLogin.Text = "";
                     txtPwd.Text = "";
                     txtLogin.Focus();
