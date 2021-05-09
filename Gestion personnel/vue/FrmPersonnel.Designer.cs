@@ -81,9 +81,9 @@
             // 
             // btnAddPerso
             // 
-            this.btnAddPerso.Location = new System.Drawing.Point(349, 329);
+            this.btnAddPerso.Location = new System.Drawing.Point(407, 380);
             this.btnAddPerso.Name = "btnAddPerso";
-            this.btnAddPerso.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPerso.Size = new System.Drawing.Size(87, 27);
             this.btnAddPerso.TabIndex = 5;
             this.btnAddPerso.Text = "Ajouter";
             this.btnAddPerso.UseVisualStyleBackColor = true;
@@ -91,9 +91,9 @@
             // 
             // btnModifPerso
             // 
-            this.btnModifPerso.Location = new System.Drawing.Point(430, 329);
+            this.btnModifPerso.Location = new System.Drawing.Point(502, 380);
             this.btnModifPerso.Name = "btnModifPerso";
-            this.btnModifPerso.Size = new System.Drawing.Size(75, 23);
+            this.btnModifPerso.Size = new System.Drawing.Size(87, 27);
             this.btnModifPerso.TabIndex = 4;
             this.btnModifPerso.Text = "Modifier";
             this.btnModifPerso.UseVisualStyleBackColor = true;
@@ -101,9 +101,9 @@
             // 
             // btnDeletePerso
             // 
-            this.btnDeletePerso.Location = new System.Drawing.Point(511, 329);
+            this.btnDeletePerso.Location = new System.Drawing.Point(596, 380);
             this.btnDeletePerso.Name = "btnDeletePerso";
-            this.btnDeletePerso.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletePerso.Size = new System.Drawing.Size(87, 27);
             this.btnDeletePerso.TabIndex = 3;
             this.btnDeletePerso.Text = "Supprimer";
             this.btnDeletePerso.UseVisualStyleBackColor = true;
@@ -114,18 +114,18 @@
             this.dgvPersonnel.AllowUserToAddRows = false;
             this.dgvPersonnel.AllowUserToDeleteRows = false;
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonnel.Location = new System.Drawing.Point(16, 30);
+            this.dgvPersonnel.Location = new System.Drawing.Point(19, 35);
             this.dgvPersonnel.Name = "dgvPersonnel";
             this.dgvPersonnel.ReadOnly = true;
             this.dgvPersonnel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPersonnel.Size = new System.Drawing.Size(570, 279);
+            this.dgvPersonnel.Size = new System.Drawing.Size(665, 322);
             this.dgvPersonnel.TabIndex = 2;
             // 
             // btnAddAbsence
             // 
-            this.btnAddAbsence.Location = new System.Drawing.Point(166, 329);
+            this.btnAddAbsence.Location = new System.Drawing.Point(194, 380);
             this.btnAddAbsence.Name = "btnAddAbsence";
-            this.btnAddAbsence.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAbsence.Size = new System.Drawing.Size(87, 27);
             this.btnAddAbsence.TabIndex = 7;
             this.btnAddAbsence.Text = "Ajouter";
             this.btnAddAbsence.UseVisualStyleBackColor = true;
@@ -133,9 +133,9 @@
             // 
             // btnModifAbsence
             // 
-            this.btnModifAbsence.Location = new System.Drawing.Point(247, 329);
+            this.btnModifAbsence.Location = new System.Drawing.Point(288, 380);
             this.btnModifAbsence.Name = "btnModifAbsence";
-            this.btnModifAbsence.Size = new System.Drawing.Size(75, 23);
+            this.btnModifAbsence.Size = new System.Drawing.Size(87, 27);
             this.btnModifAbsence.TabIndex = 6;
             this.btnModifAbsence.Text = "Modifier";
             this.btnModifAbsence.UseVisualStyleBackColor = true;
@@ -143,9 +143,9 @@
             // 
             // btnDeleteAbsence
             // 
-            this.btnDeleteAbsence.Location = new System.Drawing.Point(328, 329);
+            this.btnDeleteAbsence.Location = new System.Drawing.Point(383, 380);
             this.btnDeleteAbsence.Name = "btnDeleteAbsence";
-            this.btnDeleteAbsence.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteAbsence.Size = new System.Drawing.Size(87, 27);
             this.btnDeleteAbsence.TabIndex = 5;
             this.btnDeleteAbsence.Text = "Supprimer";
             this.btnDeleteAbsence.UseVisualStyleBackColor = true;
@@ -153,9 +153,9 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(440, 30);
+            this.btnReturn.Location = new System.Drawing.Point(513, 35);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.Size = new System.Drawing.Size(87, 27);
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Retour";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -166,10 +166,11 @@
             this.dgvAbsence.AllowUserToAddRows = false;
             this.dgvAbsence.AllowUserToDeleteRows = false;
             this.dgvAbsence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAbsence.Location = new System.Drawing.Point(45, 30);
+            this.dgvAbsence.Location = new System.Drawing.Point(52, 35);
             this.dgvAbsence.Name = "dgvAbsence";
             this.dgvAbsence.ReadOnly = true;
-            this.dgvAbsence.Size = new System.Drawing.Size(358, 279);
+            this.dgvAbsence.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAbsence.Size = new System.Drawing.Size(418, 322);
             this.dgvAbsence.TabIndex = 3;
             // 
             // grbPersonnel
@@ -179,18 +180,19 @@
             this.grbPersonnel.Controls.Add(this.btnModifPerso);
             this.grbPersonnel.Controls.Add(this.btnAddPerso);
             this.grbPersonnel.Controls.Add(this.dgvPersonnel);
-            this.grbPersonnel.Location = new System.Drawing.Point(12, 12);
+            this.grbPersonnel.Location = new System.Drawing.Point(14, 14);
             this.grbPersonnel.Name = "grbPersonnel";
-            this.grbPersonnel.Size = new System.Drawing.Size(604, 371);
+            this.grbPersonnel.Size = new System.Drawing.Size(705, 428);
             this.grbPersonnel.TabIndex = 7;
             this.grbPersonnel.TabStop = false;
             this.grbPersonnel.Text = "Liste du personnel";
             // 
             // btnShowAbs
             // 
-            this.btnShowAbs.Location = new System.Drawing.Point(26, 329);
+            this.btnShowAbs.Font = new System.Drawing.Font("Montserrat", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAbs.Location = new System.Drawing.Point(30, 380);
             this.btnShowAbs.Name = "btnShowAbs";
-            this.btnShowAbs.Size = new System.Drawing.Size(121, 23);
+            this.btnShowAbs.Size = new System.Drawing.Size(141, 27);
             this.btnShowAbs.TabIndex = 6;
             this.btnShowAbs.Text = "Afficher les absences";
             this.btnShowAbs.UseVisualStyleBackColor = true;
@@ -211,18 +213,18 @@
             this.grbAddperso.Controls.Add(this.lblPrenom);
             this.grbAddperso.Controls.Add(this.lblNom);
             this.grbAddperso.Enabled = false;
-            this.grbAddperso.Location = new System.Drawing.Point(12, 405);
+            this.grbAddperso.Location = new System.Drawing.Point(14, 467);
             this.grbAddperso.Name = "grbAddperso";
-            this.grbAddperso.Size = new System.Drawing.Size(604, 167);
+            this.grbAddperso.Size = new System.Drawing.Size(705, 193);
             this.grbAddperso.TabIndex = 8;
             this.grbAddperso.TabStop = false;
             this.grbAddperso.Text = "ajouter un personnel";
             // 
             // btnAnnulerperso
             // 
-            this.btnAnnulerperso.Location = new System.Drawing.Point(110, 133);
+            this.btnAnnulerperso.Location = new System.Drawing.Point(128, 153);
             this.btnAnnulerperso.Name = "btnAnnulerperso";
-            this.btnAnnulerperso.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnulerperso.Size = new System.Drawing.Size(87, 27);
             this.btnAnnulerperso.TabIndex = 10;
             this.btnAnnulerperso.Text = "annuler";
             this.btnAnnulerperso.UseVisualStyleBackColor = true;
@@ -230,9 +232,9 @@
             // 
             // btnSaveperso
             // 
-            this.btnSaveperso.Location = new System.Drawing.Point(29, 133);
+            this.btnSaveperso.Location = new System.Drawing.Point(34, 153);
             this.btnSaveperso.Name = "btnSaveperso";
-            this.btnSaveperso.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveperso.Size = new System.Drawing.Size(87, 27);
             this.btnSaveperso.TabIndex = 6;
             this.btnSaveperso.Text = "enregistrer";
             this.btnSaveperso.UseVisualStyleBackColor = true;
@@ -241,81 +243,81 @@
             // cboService
             // 
             this.cboService.FormattingEnabled = true;
-            this.cboService.Location = new System.Drawing.Point(308, 112);
+            this.cboService.Location = new System.Drawing.Point(359, 129);
             this.cboService.Name = "cboService";
-            this.cboService.Size = new System.Drawing.Size(151, 21);
+            this.cboService.Size = new System.Drawing.Size(175, 23);
             this.cboService.TabIndex = 9;
             // 
             // lblService
             // 
             this.lblService.AutoSize = true;
-            this.lblService.Location = new System.Drawing.Point(259, 115);
+            this.lblService.Location = new System.Drawing.Point(302, 133);
             this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(41, 13);
+            this.lblService.Size = new System.Drawing.Size(45, 15);
             this.lblService.TabIndex = 8;
             this.lblService.Text = "service";
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(290, 74);
+            this.txtTel.Location = new System.Drawing.Point(338, 85);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(169, 20);
+            this.txtTel.Size = new System.Drawing.Size(196, 21);
             this.txtTel.TabIndex = 7;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(290, 31);
+            this.txtMail.Location = new System.Drawing.Point(338, 36);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(169, 20);
+            this.txtMail.Size = new System.Drawing.Size(196, 21);
             this.txtMail.TabIndex = 6;
             // 
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(259, 77);
+            this.lblTel.Location = new System.Drawing.Point(302, 89);
             this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(18, 13);
+            this.lblTel.Size = new System.Drawing.Size(21, 15);
             this.lblTel.TabIndex = 5;
             this.lblTel.Text = "tel";
             // 
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(259, 34);
+            this.lblMail.Location = new System.Drawing.Point(302, 39);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(25, 13);
+            this.lblMail.Size = new System.Drawing.Size(31, 15);
             this.lblMail.TabIndex = 4;
             this.lblMail.Text = "mail";
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(71, 74);
+            this.txtPrenom.Location = new System.Drawing.Point(83, 85);
             this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(169, 20);
+            this.txtPrenom.Size = new System.Drawing.Size(196, 21);
             this.txtPrenom.TabIndex = 3;
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(71, 31);
+            this.txtNom.Location = new System.Drawing.Point(83, 36);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(169, 20);
+            this.txtNom.Size = new System.Drawing.Size(196, 21);
             this.txtNom.TabIndex = 2;
             // 
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(23, 77);
+            this.lblPrenom.Location = new System.Drawing.Point(27, 89);
             this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Size = new System.Drawing.Size(42, 13);
+            this.lblPrenom.Size = new System.Drawing.Size(51, 15);
             this.lblPrenom.TabIndex = 1;
             this.lblPrenom.Text = "prenom";
             // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(26, 34);
+            this.lblNom.Location = new System.Drawing.Point(30, 39);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(27, 13);
+            this.lblNom.Size = new System.Drawing.Size(33, 15);
             this.lblNom.TabIndex = 0;
             this.lblNom.Text = "nom";
             // 
@@ -327,9 +329,9 @@
             this.grbAbsence.Controls.Add(this.btnReturn);
             this.grbAbsence.Controls.Add(this.btnDeleteAbsence);
             this.grbAbsence.Enabled = false;
-            this.grbAbsence.Location = new System.Drawing.Point(638, 12);
+            this.grbAbsence.Location = new System.Drawing.Point(744, 14);
             this.grbAbsence.Name = "grbAbsence";
-            this.grbAbsence.Size = new System.Drawing.Size(532, 371);
+            this.grbAbsence.Size = new System.Drawing.Size(621, 428);
             this.grbAbsence.TabIndex = 9;
             this.grbAbsence.TabStop = false;
             this.grbAbsence.Text = "Liste des absences";
@@ -345,18 +347,18 @@
             this.grbAddabsence.Controls.Add(this.lblDatefin);
             this.grbAddabsence.Controls.Add(this.lblDatedebut);
             this.grbAddabsence.Enabled = false;
-            this.grbAddabsence.Location = new System.Drawing.Point(638, 405);
+            this.grbAddabsence.Location = new System.Drawing.Point(744, 467);
             this.grbAddabsence.Name = "grbAddabsence";
-            this.grbAddabsence.Size = new System.Drawing.Size(532, 167);
+            this.grbAddabsence.Size = new System.Drawing.Size(621, 193);
             this.grbAddabsence.TabIndex = 10;
             this.grbAddabsence.TabStop = false;
             this.grbAddabsence.Text = "ajouter une absence";
             // 
             // btnAnnulerabsence
             // 
-            this.btnAnnulerabsence.Location = new System.Drawing.Point(105, 133);
+            this.btnAnnulerabsence.Location = new System.Drawing.Point(122, 153);
             this.btnAnnulerabsence.Name = "btnAnnulerabsence";
-            this.btnAnnulerabsence.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnulerabsence.Size = new System.Drawing.Size(87, 27);
             this.btnAnnulerabsence.TabIndex = 11;
             this.btnAnnulerabsence.Text = "annuler";
             this.btnAnnulerabsence.UseVisualStyleBackColor = true;
@@ -364,9 +366,9 @@
             // 
             // btnSaveabsence
             // 
-            this.btnSaveabsence.Location = new System.Drawing.Point(24, 133);
+            this.btnSaveabsence.Location = new System.Drawing.Point(28, 153);
             this.btnSaveabsence.Name = "btnSaveabsence";
-            this.btnSaveabsence.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveabsence.Size = new System.Drawing.Size(87, 27);
             this.btnSaveabsence.TabIndex = 11;
             this.btnSaveabsence.Text = "enregistrer";
             this.btnSaveabsence.UseVisualStyleBackColor = true;
@@ -374,62 +376,64 @@
             // 
             // dtpFin
             // 
-            this.dtpFin.Location = new System.Drawing.Point(111, 71);
+            this.dtpFin.Location = new System.Drawing.Point(129, 82);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFin.Size = new System.Drawing.Size(233, 21);
             this.dtpFin.TabIndex = 11;
             // 
             // dtpDebut
             // 
-            this.dtpDebut.Location = new System.Drawing.Point(111, 31);
+            this.dtpDebut.Location = new System.Drawing.Point(129, 36);
             this.dtpDebut.Name = "dtpDebut";
-            this.dtpDebut.Size = new System.Drawing.Size(200, 20);
+            this.dtpDebut.Size = new System.Drawing.Size(233, 21);
             this.dtpDebut.TabIndex = 10;
+            this.dtpDebut.Value = new System.DateTime(2021, 5, 9, 18, 9, 0, 0);
             // 
             // cboMotif
             // 
             this.cboMotif.FormattingEnabled = true;
-            this.cboMotif.Location = new System.Drawing.Point(364, 31);
+            this.cboMotif.Location = new System.Drawing.Point(425, 36);
             this.cboMotif.Name = "cboMotif";
-            this.cboMotif.Size = new System.Drawing.Size(151, 21);
+            this.cboMotif.Size = new System.Drawing.Size(175, 23);
             this.cboMotif.TabIndex = 9;
             // 
             // lblMotif
             // 
             this.lblMotif.AutoSize = true;
-            this.lblMotif.Location = new System.Drawing.Point(317, 34);
+            this.lblMotif.Location = new System.Drawing.Point(370, 39);
             this.lblMotif.Name = "lblMotif";
-            this.lblMotif.Size = new System.Drawing.Size(29, 13);
+            this.lblMotif.Size = new System.Drawing.Size(37, 15);
             this.lblMotif.TabIndex = 8;
             this.lblMotif.Text = "motif";
             // 
             // lblDatefin
             // 
             this.lblDatefin.AutoSize = true;
-            this.lblDatefin.Location = new System.Drawing.Point(26, 74);
+            this.lblDatefin.Location = new System.Drawing.Point(30, 85);
             this.lblDatefin.Name = "lblDatefin";
-            this.lblDatefin.Size = new System.Drawing.Size(57, 13);
+            this.lblDatefin.Size = new System.Drawing.Size(66, 15);
             this.lblDatefin.TabIndex = 4;
             this.lblDatefin.Text = "date de fin";
             // 
             // lblDatedebut
             // 
             this.lblDatedebut.AutoSize = true;
-            this.lblDatedebut.Location = new System.Drawing.Point(26, 34);
+            this.lblDatedebut.Location = new System.Drawing.Point(30, 39);
             this.lblDatedebut.Name = "lblDatedebut";
-            this.lblDatedebut.Size = new System.Drawing.Size(73, 13);
+            this.lblDatedebut.Size = new System.Drawing.Size(83, 15);
             this.lblDatedebut.TabIndex = 0;
             this.lblDatedebut.Text = "date de début";
             // 
             // frmPersonnel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 597);
+            this.ClientSize = new System.Drawing.Size(1389, 689);
             this.Controls.Add(this.grbAddabsence);
             this.Controls.Add(this.grbAbsence);
             this.Controls.Add(this.grbAddperso);
             this.Controls.Add(this.grbPersonnel);
+            this.Font = new System.Drawing.Font("Montserrat", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPersonnel";
             this.Text = "Logiciel de gestion du personnel";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
