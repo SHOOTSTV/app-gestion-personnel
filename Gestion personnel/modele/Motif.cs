@@ -11,7 +11,11 @@ namespace Gestion_personnel.modele
         private int idmotif;
         private string libelle;
 
-        // Constructeur
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="idmotif"></param>
+        /// <param name="libelle"></param>
         public Motif(int idmotif, string libelle)
         {
             this.idmotif = idmotif;
@@ -21,7 +25,10 @@ namespace Gestion_personnel.modele
         public int Idmotif { get => idmotif; }
         public string Libelle { get => libelle; }
 
-        // Définit l'information à afficher 
+        /// <summary>
+        /// Définit l'information à afficher 
+        /// </summary>
+        /// <returns>retourne le libelle</returns>
         public override string ToString()
         {
             return this.libelle;

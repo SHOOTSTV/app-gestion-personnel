@@ -11,7 +11,11 @@ namespace Gestion_personnel.modele
         private int idservice;
         private string nom;
 
-        // Constructeur
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="idservice"></param>
+        /// <param name="nom"></param>
         public Service(int idservice, string nom)
         {
             this.idservice = idservice;
@@ -21,7 +25,9 @@ namespace Gestion_personnel.modele
         public int Idservice { get => idservice; }
         public string Nom { get => nom; }
 
-        // Définit l'information à afficher 
+        /// <summary>
+        /// Définit l'information à afficher
+        /// </summary>
         public override string ToString()
         {
             return this.nom;

@@ -5,16 +5,22 @@ using System.Collections.Generic;
 
 namespace Gestion_personnel.dal
 {
-    // Classe qui permet de gérer toute demandes qui concerne les données
+    /// <summary>
+    /// Classe qui permet de gérer toute demandes qui concerne les données
+    /// </summary>
     public class AccesData
     {   //  connexion à la BDD 
         private static string connectionString = "server=127.0.0.1;user id=root;persistsecurityinfo=True;database=mlr1";
 
-        // Contrôle si l'user à le droit de se connecter (login password)
+        /// <summary>
+        /// Contrôle si l'user à le droit de se connecter (login password)
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
         public static Boolean ControleAuthentification(string login, string pwd)
         {
             string req = "select * from responsable where login=@login and pwd=@pwd";
-            // req += "where r.login=@login and pwd=SHA2(@pwd, 256)";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@login", login);
             parameters.Add("@pwd", pwd);
@@ -32,7 +38,10 @@ namespace Gestion_personnel.dal
             }
         }
 
-        // Récupère et retourne les personnels provenant de la BDD
+        /// <summary>
+        /// Récupère et retourne les personnels provenant de la BDD
+        /// </summary>
+        /// <returns>La liste des personnels</returns>
         public static List<Personnel> GetLesPersonnels()
         {
             List<Personnel> lesPersonnels = new List<Personnel>();
@@ -51,7 +60,10 @@ namespace Gestion_personnel.dal
             return lesPersonnels;
         }
 
-        // Récupère et retourne les absences provenant de la BDD
+        /// <summary>
+        /// Récupère et retourne les absences provenant de la BDD
+        /// </summary>
+        /// <returns>La liste des absences</returns>
         public static List<Absence> GetLesAbsences()
         {
             List<Absence> lesAbsences = new List<Absence>();
@@ -68,7 +80,10 @@ namespace Gestion_personnel.dal
             curs.Close();
             return lesAbsences;
         }
-        // Récupère et retourne les services provenant de la BDD
+        /// <summary>
+        /// Récupère et retourne les services provenant de la BDD
+        /// </summary>
+        /// <returns>Les services</returns>
         public static List<Service> GetLesServices()
         {
             List<Service> lesServices = new List<Service>();
@@ -83,7 +98,10 @@ namespace Gestion_personnel.dal
             curs.Close();
             return lesServices;
         }
-        // Récupère et retourne les motifs provenant de la BDD
+        /// <summary>
+        /// Récupère et retourne les motifs provenant de la BDD
+        /// </summary>
+        /// <returns>Les motifs</returns>
         public static List<Motif> GetLesMotifs()
         {
             List<Motif> lesMotifs = new List<Motif>();
@@ -98,7 +116,10 @@ namespace Gestion_personnel.dal
             curs.Close();
             return lesMotifs;
         }
-        // Demande de suppression d'un personnel
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public static void DelPersonnel(Personnel personnel)
         {
             string req = "delete from personnel where idpersonnel = @idpersonnel;";
@@ -107,7 +128,10 @@ namespace Gestion_personnel.dal
             ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
         }
-        // Demande d'ajout d'un personnel
+        /// <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public static void AddPersonnel(Personnel personnel)
         {
             string req = "insert into personnel(nom, prenom, tel, mail, idservice) ";
@@ -122,7 +146,10 @@ namespace Gestion_personnel.dal
             conn.ReqUpdate(req, parameters);
 
         }
-        // Demande de modification d'un développeur
+        /// <summary>
+        /// Demande de modification d'un développeur
+        /// </summary>
+        /// <param name="personnel"></param>
         public static void UpdatePersonnel(Personnel personnel)
         {
             string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
@@ -137,7 +164,10 @@ namespace Gestion_personnel.dal
             ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
         }
-        // Demande de suppression d'une absence
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public static void DelAbsence(Absence absence)
         {
             string req = "delete from absence where idpersonnel = @idpersonnel AND datedebut = @datedebut AND idmotif = @idmotif AND datefin = @datefin;";
@@ -150,7 +180,10 @@ namespace Gestion_personnel.dal
             conn.ReqUpdate(req, parameters);
 
         }
-        // Demande d'ajout d'une absence
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public static void AddAbsence(Absence absence)
         {
             string req = "insert into absence(idpersonnel, datedebut, idmotif, datefin) ";
@@ -163,7 +196,10 @@ namespace Gestion_personnel.dal
             ConnexionBDD conn = ConnexionBDD.GetInstance(connectionString);
             conn.ReqUpdate(req, parameters);
         }
-        // Demande de modification d'un développeur 
+        /// <summary>
+        /// Demande de modification d'un développeur 
+        /// </summary>
+        /// <param name="absence"></param>
         public static void UpdateAbsence(Absence absence)
         {
             string req = "update absence set datedebut = @datedebut, idmotif = @idmotif, datefin = @datefin ";
