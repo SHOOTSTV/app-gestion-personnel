@@ -56,5 +56,35 @@ namespace Gestion_personnel.controleur
         {
             return AccesData.GetLesMotifs();
         }
-    } 
+        // Demande de suppression d'un personnel
+        public void DelPersonnel(Personnel personnel)
+        {
+            AccesData.DelPersonnel(personnel);
+        }
+        // Demande d'ajout d'un personnel
+        public void AddPersonnel(Personnel personnel)
+        {
+            AccesData.AddPersonnel(personnel);
+        }
+        // Demande de modification d'un personnel
+        public void UpdatePersonnel(Personnel personnel)
+        {
+            AccesData.UpdatePersonnel(personnel);
+        }
+        // Demande de suppression d'une absence
+        public void DelAbsence(Absence absence)
+        {
+            AccesData.DelAbsence(absence);
+        }
+        // Demande d'ajout d'une absence
+        public void AddAbsence(Absence absence)
+        {
+            AccesData.AddAbsence(absence);
+        }
+        // Demande de modification d'une absence
+        public void UpdateAbsence(Absence absence)
+        {
+            AccesData.UpdateAbsence(absence);
+        }
+    }
 }

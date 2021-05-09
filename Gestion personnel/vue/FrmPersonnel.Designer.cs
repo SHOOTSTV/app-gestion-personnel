@@ -39,6 +39,7 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.dgvAbsence = new System.Windows.Forms.DataGridView();
             this.grbPersonnel = new System.Windows.Forms.GroupBox();
+            this.btnShowAbs = new System.Windows.Forms.Button();
             this.grbAddperso = new System.Windows.Forms.GroupBox();
             this.btnAnnulerperso = new System.Windows.Forms.Button();
             this.btnSaveperso = new System.Windows.Forms.Button();
@@ -86,6 +87,7 @@
             this.btnAddPerso.TabIndex = 5;
             this.btnAddPerso.Text = "Ajouter";
             this.btnAddPerso.UseVisualStyleBackColor = true;
+            this.btnAddPerso.Click += new System.EventHandler(this.btnAddPerso_Click);
             // 
             // btnModifPerso
             // 
@@ -95,6 +97,7 @@
             this.btnModifPerso.TabIndex = 4;
             this.btnModifPerso.Text = "Modifier";
             this.btnModifPerso.UseVisualStyleBackColor = true;
+            this.btnModifPerso.Click += new System.EventHandler(this.btnModifPerso_Click);
             // 
             // btnDeletePerso
             // 
@@ -104,6 +107,7 @@
             this.btnDeletePerso.TabIndex = 3;
             this.btnDeletePerso.Text = "Supprimer";
             this.btnDeletePerso.UseVisualStyleBackColor = true;
+            this.btnDeletePerso.Click += new System.EventHandler(this.btnDeletePerso_Click);
             // 
             // dgvPersonnel
             // 
@@ -113,6 +117,7 @@
             this.dgvPersonnel.Location = new System.Drawing.Point(16, 30);
             this.dgvPersonnel.Name = "dgvPersonnel";
             this.dgvPersonnel.ReadOnly = true;
+            this.dgvPersonnel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonnel.Size = new System.Drawing.Size(570, 279);
             this.dgvPersonnel.TabIndex = 2;
             // 
@@ -124,6 +129,7 @@
             this.btnAddAbsence.TabIndex = 7;
             this.btnAddAbsence.Text = "Ajouter";
             this.btnAddAbsence.UseVisualStyleBackColor = true;
+            this.btnAddAbsence.Click += new System.EventHandler(this.btnAddAbsence_Click);
             // 
             // btnModifAbsence
             // 
@@ -133,6 +139,7 @@
             this.btnModifAbsence.TabIndex = 6;
             this.btnModifAbsence.Text = "Modifier";
             this.btnModifAbsence.UseVisualStyleBackColor = true;
+            this.btnModifAbsence.Click += new System.EventHandler(this.btnModifAbsence_Click);
             // 
             // btnDeleteAbsence
             // 
@@ -142,6 +149,7 @@
             this.btnDeleteAbsence.TabIndex = 5;
             this.btnDeleteAbsence.Text = "Supprimer";
             this.btnDeleteAbsence.UseVisualStyleBackColor = true;
+            this.btnDeleteAbsence.Click += new System.EventHandler(this.btnDeleteAbsence_Click);
             // 
             // btnReturn
             // 
@@ -151,6 +159,7 @@
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Retour";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // dgvAbsence
             // 
@@ -165,6 +174,7 @@
             // 
             // grbPersonnel
             // 
+            this.grbPersonnel.Controls.Add(this.btnShowAbs);
             this.grbPersonnel.Controls.Add(this.btnDeletePerso);
             this.grbPersonnel.Controls.Add(this.btnModifPerso);
             this.grbPersonnel.Controls.Add(this.btnAddPerso);
@@ -175,6 +185,16 @@
             this.grbPersonnel.TabIndex = 7;
             this.grbPersonnel.TabStop = false;
             this.grbPersonnel.Text = "Liste du personnel";
+            // 
+            // btnShowAbs
+            // 
+            this.btnShowAbs.Location = new System.Drawing.Point(26, 329);
+            this.btnShowAbs.Name = "btnShowAbs";
+            this.btnShowAbs.Size = new System.Drawing.Size(121, 23);
+            this.btnShowAbs.TabIndex = 6;
+            this.btnShowAbs.Text = "Afficher les absences";
+            this.btnShowAbs.UseVisualStyleBackColor = true;
+            this.btnShowAbs.Click += new System.EventHandler(this.btnShowAbs_Click);
             // 
             // grbAddperso
             // 
@@ -190,12 +210,13 @@
             this.grbAddperso.Controls.Add(this.txtNom);
             this.grbAddperso.Controls.Add(this.lblPrenom);
             this.grbAddperso.Controls.Add(this.lblNom);
+            this.grbAddperso.Enabled = false;
             this.grbAddperso.Location = new System.Drawing.Point(12, 405);
             this.grbAddperso.Name = "grbAddperso";
             this.grbAddperso.Size = new System.Drawing.Size(604, 167);
             this.grbAddperso.TabIndex = 8;
             this.grbAddperso.TabStop = false;
-            this.grbAddperso.Text = "Ajouter un personnel";
+            this.grbAddperso.Text = "ajouter un personnel";
             // 
             // btnAnnulerperso
             // 
@@ -205,6 +226,7 @@
             this.btnAnnulerperso.TabIndex = 10;
             this.btnAnnulerperso.Text = "annuler";
             this.btnAnnulerperso.UseVisualStyleBackColor = true;
+            this.btnAnnulerperso.Click += new System.EventHandler(this.btnAnnulerperso_Click);
             // 
             // btnSaveperso
             // 
@@ -214,6 +236,7 @@
             this.btnSaveperso.TabIndex = 6;
             this.btnSaveperso.Text = "enregistrer";
             this.btnSaveperso.UseVisualStyleBackColor = true;
+            this.btnSaveperso.Click += new System.EventHandler(this.btnSaveperso_Click);
             // 
             // cboService
             // 
@@ -327,7 +350,7 @@
             this.grbAddabsence.Size = new System.Drawing.Size(532, 167);
             this.grbAddabsence.TabIndex = 10;
             this.grbAddabsence.TabStop = false;
-            this.grbAddabsence.Text = "Ajouter une absence";
+            this.grbAddabsence.Text = "ajouter une absence";
             // 
             // btnAnnulerabsence
             // 
@@ -337,6 +360,7 @@
             this.btnAnnulerabsence.TabIndex = 11;
             this.btnAnnulerabsence.Text = "annuler";
             this.btnAnnulerabsence.UseVisualStyleBackColor = true;
+            this.btnAnnulerabsence.Click += new System.EventHandler(this.btnAnnulerabsence_Click);
             // 
             // btnSaveabsence
             // 
@@ -346,6 +370,7 @@
             this.btnSaveabsence.TabIndex = 11;
             this.btnSaveabsence.Text = "enregistrer";
             this.btnSaveabsence.UseVisualStyleBackColor = true;
+            this.btnSaveabsence.Click += new System.EventHandler(this.btnSaveabsence_Click);
             // 
             // dtpFin
             // 
@@ -461,6 +486,7 @@
         private System.Windows.Forms.BindingSource bdgAbsence;
         private System.Windows.Forms.BindingSource bdgService;
         private System.Windows.Forms.BindingSource bdgMotif;
+        private System.Windows.Forms.Button btnShowAbs;
     }
 }
 

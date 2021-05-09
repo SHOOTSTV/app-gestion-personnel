@@ -33,7 +33,6 @@ namespace Gestion_personnel.modele
             this.prenom = prenom;
             this.tel = tel;
             this.mail = mail;
-            this.idservice = idservice;
             this.service = service;
         }
 
