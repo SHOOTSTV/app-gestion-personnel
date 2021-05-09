@@ -376,21 +376,29 @@
             // 
             // dtpFin
             // 
+            this.dtpFin.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFin.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFin.Location = new System.Drawing.Point(129, 82);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(233, 21);
+            this.dtpFin.Size = new System.Drawing.Size(233, 22);
             this.dtpFin.TabIndex = 11;
             // 
             // dtpDebut
             // 
+            this.dtpDebut.CustomFormat = "dd/MM/yyyy HH:mm:sss";
+            this.dtpDebut.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDebut.Location = new System.Drawing.Point(129, 36);
+            this.dtpDebut.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpDebut.Name = "dtpDebut";
-            this.dtpDebut.Size = new System.Drawing.Size(233, 21);
+            this.dtpDebut.Size = new System.Drawing.Size(233, 22);
             this.dtpDebut.TabIndex = 10;
             this.dtpDebut.Value = new System.DateTime(2021, 5, 9, 18, 9, 0, 0);
             // 
             // cboMotif
             // 
+            this.cboMotif.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMotif.FormattingEnabled = true;
             this.cboMotif.Location = new System.Drawing.Point(425, 36);
             this.cboMotif.Name = "cboMotif";
