@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestion_personnel.modele
 {
+    /// <summary>
+    /// Classe qui gère le constructeur des motifs
+    /// </summary>
     public class Motif
     {
         private int idmotif;
@@ -22,7 +25,13 @@ namespace Gestion_personnel.modele
             this.libelle = libelle;
         }
 
+        /// <summary>
+        /// getter sur un id motif de la table motif
+        /// </summary>
         public int Idmotif { get => idmotif; }
+        /// <summary>
+        /// getter sur un libelle de la table motif
+        /// </summary>
         public string Libelle { get => libelle; }
 
         /// <summary>

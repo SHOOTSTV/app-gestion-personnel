@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestion_personnel.modele
 {
+    /// <summary>
+    /// Classe qui gère le contructeur des services
+    /// </summary>
     public class Service
     {
         private int idservice;
@@ -22,7 +25,13 @@ namespace Gestion_personnel.modele
             this.nom = nom;
         }
 
+        /// <summary>
+        /// getter sur un id service de la table service
+        /// </summary>
         public int Idservice { get => idservice; }
+        /// <summary>
+        /// getter sur un nom de la table service
+        /// </summary>
         public string Nom { get => nom; }
 
         /// <summary>

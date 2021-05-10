@@ -21,6 +21,10 @@ namespace Gestion_personnel.vue
         /// </summary>
         private Controle controle;
 
+        /// <summary>
+        /// Initialisation des composants graphiques
+        /// </summary>
+        /// <param name="controle"></param>
         public frmLogin(Controle controle)
         {
             InitializeComponent();
