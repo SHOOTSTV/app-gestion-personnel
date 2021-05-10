@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestion_personnel.modele
 {
+    /// <summary>
+    /// Classe qui gère le constructeur des Absences
+    /// </summary>
     public class Absence
     {
         private int idpersonnel;
@@ -14,10 +17,25 @@ namespace Gestion_personnel.modele
         private DateTime datefin;
         private string motif;
 
+        /// <summary>
+        /// getter sur l'idpersonnel lié à l'absence
+        /// </summary>
         public int Idpersonnel { get => idpersonnel; }
+        /// <summary>
+        /// getter sur la date de début de l'absence
+        /// </summary>
         public DateTime Datedebut { get => datedebut; }
+        /// <summary>
+        /// getter sur l'id du motif de l'absence
+        /// </summary>
         public int Idmotif { get => idmotif; }
+        /// <summary>
+        /// getter sur la date de fin d'une absence
+        /// </summary>
         public DateTime Datefin{ get => datefin; }
+        /// <summary>
+        /// getter sur le motif de l'absence
+        /// </summary>
         public string Motif { get => motif; }
 
 

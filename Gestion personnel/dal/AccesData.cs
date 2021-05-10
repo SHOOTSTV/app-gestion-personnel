@@ -20,7 +20,7 @@ namespace Gestion_personnel.dal
         /// <returns></returns>
         public static Boolean ControleAuthentification(string login, string pwd)
         {
-            string req = "select * from responsable where login=@login and pwd=@pwd";
+            string req = "select * from responsable where login=@login and pwd=SHA2(@pwd, 256) ";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@login", login);
             parameters.Add("@pwd", pwd);
