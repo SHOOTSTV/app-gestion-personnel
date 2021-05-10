@@ -57,7 +57,7 @@ namespace Gestion_personnel
         }
 
         /// <summary>
-        /// Affiche les services
+        /// Affiche les services dans les combobox
         /// </summary>
         public void RemplirListeServices()
         {
@@ -84,7 +84,7 @@ namespace Gestion_personnel
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         /// <summary>
-        /// Affiche les motifs
+        /// Affiche les motifs dans les combobox
         /// </summary>
         public void RemplirListeMotifs()
         {
