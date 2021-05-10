@@ -68,7 +68,7 @@ namespace Gestion_personnel.dal
         {
             List<Absence> lesAbsences = new List<Absence>();
             string req = "select a.idpersonnel as idpersonnel, a.datedebut as datedebut, m.idmotif as idmotif, a.datefin as datefin, m.libelle as motif ";
-            req += "from absence a join motif m on (a.idmotif = m.idmotif) ";
+            req += "from absence a join motif m on (a.idmotif = m.idmotif) ORDER BY datedebut DESC";
 
             ConnexionBDD curs = ConnexionBDD.GetInstance(connectionString);
             curs.ReqSelect(req, null);
@@ -147,7 +147,7 @@ namespace Gestion_personnel.dal
 
         }
         /// <summary>
-        /// Demande de modification d'un développeur
+        /// Demande de modification d'un personnel
         /// </summary>
         /// <param name="personnel"></param>
         public static void UpdatePersonnel(Personnel personnel)
@@ -197,7 +197,7 @@ namespace Gestion_personnel.dal
             conn.ReqUpdate(req, parameters);
         }
         /// <summary>
-        /// Demande de modification d'un développeur 
+        /// Demande de modification d'une absence
         /// </summary>
         /// <param name="absence"></param>
         public static void UpdateAbsence(Absence absence)

@@ -22,7 +22,8 @@
     <Language>en-US</Language>
     <DocumentationSources>
       <DocumentationSource sourceFile="Gestion personnel\bin\Debug\Gestion personnel.xml" />
-<DocumentationSource sourceFile="Gestion personnel\bin\Debug\Gestion personnel.exe" /></DocumentationSources>
+      <DocumentationSource sourceFile="Gestion personnel\bin\Debug\Gestion personnel.exe" />
+    </DocumentationSources>
     <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
