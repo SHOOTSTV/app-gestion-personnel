@@ -147,7 +147,7 @@ namespace Gestion_personnel.dal
 
         }
         /// <summary>
-        /// Demande de modification d'un développeur
+        /// Demande de modification d'un personnel
         /// </summary>
         /// <param name="personnel"></param>
         public static void UpdatePersonnel(Personnel personnel)
