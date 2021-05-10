@@ -197,7 +197,7 @@ namespace Gestion_personnel.dal
             conn.ReqUpdate(req, parameters);
         }
         /// <summary>
-        /// Demande de modification d'un développeur 
+        /// Demande de modification d'une absence
         /// </summary>
         /// <param name="absence"></param>
         public static void UpdateAbsence(Absence absence)
